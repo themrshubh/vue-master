@@ -2,7 +2,7 @@
 
 This project uses chartjs to display charts as a component in a Vue application. This uses various Vue functionalities like mixins, event bus, various lifecycle hooks like `created()`.
 
-![](./demo/demo)
+![](./demo/demo.png)
 
 ## Project setup
 ```
