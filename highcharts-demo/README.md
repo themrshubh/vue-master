@@ -1,5 +1,8 @@
 # highcharts-demo
 
+![](./demo/demo%201.png)
+![](./demo/demo%202.png)
+
 ## Project setup
 ```
 npm install
