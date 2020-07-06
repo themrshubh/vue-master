@@ -1,9 +1,9 @@
 <template>
   <div id="app">
-    <b-container class="mt-3">
+    <b-container class="mt-4">
       <b-row>
         <b-col class="text-center">
-          <h3 class="text-muted">Demo Highcharts</h3>
+          <h2>Demo Highcharts</h2>
         </b-col>
       </b-row>
       <b-row>
@@ -11,9 +11,9 @@
           <chart></chart>
         </b-card>
       </b-row>
-      <b-row>
+      <b-row class="mt-2">
         <b-card style="width: 100%" v-if="barselect">
-          <h4 class="text-muted text-center">You selected {{ month }}</h4>
+          <div class="text-center">You selected {{ month }}</div>
         </b-card>
       </b-row>
     </b-container>

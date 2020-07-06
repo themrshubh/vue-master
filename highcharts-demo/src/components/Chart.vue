@@ -23,6 +23,12 @@ export default {
             data:  [136, 180, 137, 123, 43, 129, 174, 178, 177, 175, 45, 141, 111, 83, 179, 157, 129, 81, 174, 122, 129, 117, 142, 113, 198, 136, 175, 141, 101, 148, 90],
             type:'column',
             name:'Monthly Usage'
+          },
+          {
+            data: [200, 240, 280, 320, 360, 400, 440, 480, 520, 560, 600, 640, 680, 720, 760, 800, 840, 880, 920, 960, 1000, 1040, 1080, 1120, 1160, 1200, 1240, 1280, 1320, 1360, 1400, 1440],
+            yAxis: 1,
+            type: "spline",
+            name: 'Units',
           }
         ] 
       },
@@ -40,9 +46,10 @@ export default {
             name: 'Alerts 2'
           },
           {
-            data: [0, 10, 25, 45, 70, 100, 135, 175, 220],
-            type: "line",
-            name: 'Units'
+            data: [200, 220, 240, 260, 280, 300, 320, 340, 360, 380, 400, 420],
+            yAxis: 1,
+            type: "spline",
+            name: 'Units',
           }
         ]
       },
@@ -51,17 +58,18 @@ export default {
           {
             data: [29.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4],
             type: "column",
-            name: 'Alerts 1'
+            name: 'Alerts 1',
           },
           {
             data: [40.5, 61.5, 76.4, 129.2, 155.0, 17.0, 135.6, 180, 212.4, 154.1, 195.6, 54.4],
             type: "column",
-            name: 'Alerts 2'
+            name: 'Alerts 2',
           },
           {
-            data: [0, 10, 25, 45, 70, 100, 135, 175, 220],
-            type: "line",
-            name: 'Units'
+            data: [200, 220, 240, 260, 280, 300, 320, 340, 360, 380, 400, 420],
+            yAxis: 1,
+            type: "spline",
+            name: 'Units',
           }
         ]
     }
@@ -75,14 +83,29 @@ export default {
         xAxis: {
           categories: this.chartCategories
         },
+        yAxis:[
+          {
+            title: { text: "Number of Alerts"}
+          },
+          {
+            title: { text: "Units Used" }, 
+            opposite: true
+          }
+        ],
         plotOptions: {
           series: {
             events: {
               click: (e) => {
                 this.clicked(e)
               }
-            }
-          }
+            },
+            states: {
+              inactive: {
+                opacity: 0.8
+              }
+            },
+            groupPadding: 0.1, 
+          },
         },
         series: this.chartSeries
       }
