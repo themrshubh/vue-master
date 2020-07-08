@@ -1,5 +1,7 @@
 # mapbox-demo
 
+![](./demo/demo.png)
+
 ## Project setup
 ```
 npm install
